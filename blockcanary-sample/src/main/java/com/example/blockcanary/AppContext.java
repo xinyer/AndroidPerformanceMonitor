@@ -30,8 +30,8 @@ public class AppContext extends BlockCanaryContext {
         String qualifier = "";
         try {
             PackageInfo info = DemoApplication.getAppContext().getPackageManager()
-                    .getPackageInfo(DemoApplication.getAppContext().getPackageName(), 0);
-            qualifier += info.versionCode + "_" + info.versionName + "_YYB";
+                    .getPackageInfo(DemoApplication.getAppContext().getPackageName(), PackageManager.PackageInfoFlags.of(0));
+            qualifier += info.getLongVersionCode() + "_" + info.versionName + "_YYB";
         } catch (PackageManager.NameNotFoundException e) {
             Log.e(TAG, "provideQualifier exception", e);
         }

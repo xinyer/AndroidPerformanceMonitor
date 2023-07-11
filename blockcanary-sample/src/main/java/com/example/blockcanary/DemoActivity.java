@@ -21,7 +21,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 public class DemoActivity extends AppCompatActivity {
 
@@ -35,12 +34,7 @@ public class DemoActivity extends AppCompatActivity {
                 .commit();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showTipDialog();
-            }
-        });
+        fab.setOnClickListener(view -> showTipDialog());
     }
 
     private void showTipDialog() {
